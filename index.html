@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mokrinskiy</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-white text-black font-sans mx-20 max-lg:mx-12 max-md:mx-2 z-50">
+        <!-- Header -->
+        <header
+            class="fixed top-0 left-0 right-0 bg-white z-50 mx-20 max-lg:mx-12 max-md:mx-2"
+        >
+            <nav class="flex justify-end items-center px-2 py-4 gap-8 max-md:gap-4 max-md:text-[15px] max-sm:text-[13px]">
+                <a href="#works" class="hover:underline">MY WORKS</a>
+                <a href="#about" class="hover:underline">ABOUT</a>
+                <a href="#contact" class="hover:underline">CONTACT</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section
+            class="relative h-screen flex justify-center items-center overflow-hidden"
+        >
+            <div class="absolute inset-0 flex justify-center items-center">
+                <div class="w-[200px] h-[200px] bg-gray-300">
+                    <img
+                        src="images/me.jpg"
+                        alt="Hero Image"
+                        class="w-full h-full object-cover opacity-80"
+                    />
+                </div>
+            </div>
+            <div class="text-center z-10">
+                <h1 class="text-7xl max-lg:text-6xl max-md:text-4xl text-black font-normal">
+                    МОКРИНСКИЙ АРТЁМ
+                </h1>
+                <p class="text-5xl font-normal text-black max-lg:text-4xl max-md:text-2xl">ФОТОГРАФ)))</p>
+            </div>
+        </section>
+
+        <!-- My Works Section -->
+        <section class="py-16">
+            <h2 class="text-4xl font-semibold mb-8 max-md:mb-4 max-md:text-2xl">MY WORKS</h2>
+            <div class="mb-8 w-full border-b-2 flex justify-between max-md:text-[14px]">
+                <button
+                    class="filter-btn font-bold border-b-2 border-black"
+                    data-category="all"
+                >
+                    ALL
+                </button>
+                <button class="filter-btn" data-category="portraits">
+                    PORTRAITS
+                </button>
+                <button class="filter-btn" data-category="street">
+                    STREET
+                </button>
+                <button class="filter-btn" data-category="landscapes">
+                    LANDSCAPES
+                </button>
+            </div>
+            <div id="gallery" class="grid grid-cols-2 gap-4">
+                <!-- Works will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="py-16">
+            <h2 class="text-4xl font-semibold mb-8 max-md:mb-4 max-md:text-2xl">ABOUT ME</h2>
+            <p>...</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-16 flex flex-col ">
+            <h2 class="text-4xl font-semibold mb-8 max-md:mb-4 max-md:text-2xl">CONTACT</h2>
+            <div class="flex justify-between flex-row max-sm:flex-col max-sm:gap-4">
+                <div>
+                    <p class="font-normal text-sm text-gray-500">EMAIL</p>
+                    <p class="max-sm:text-sm">ARTYOMMOKRINSKIY@GMAIL.COM</p>
+                </div>
+                <div>
+                    <p class="font-normal text-sm text-gray-500">SOCIALS</p>
+                    <p class="flex gap-4 max-sm:text-sm">
+                        <a
+                            href="https://www.instagram.com/mokrinskiy_/"
+                            target="_blank"
+                            class="hover:underline"
+                            >INSTAGRAM</a
+                        >
+                        <a
+                            href="https://t.me/mokrinskiy"
+                            target="_blank"
+                            class="hover:underline max-sm:text-sm"
+                            >TELEGRAM</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Модальное окно -->
+        <div
+            id="modal"
+            class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
+        >
+            <div
+                class="relative w-full h-full flex justify-center items-center"
+            >
+                <button
+                    id="close-modal"
+                    class="absolute top-4 right-4 p-4 text-white"
+                >
+                    X
+                </button>
+                <button
+                    id="prev"
+                    class="absolute top-1/2 left-0 transform -translate-y-1/2 p-4 text-white"
+                >
+                    ←
+                </button>
+                <button
+                    id="next"
+                    class="absolute top-1/2 right-0 transform -translate-y-1/2 p-4 text-white"
+                >
+                    →
+                </button>
+                <img
+                    id="modal-img"
+                    class="max-w-full max-h-full object-contain"
+                />
+            </div>
+        </div>
+        <script src="./data.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
